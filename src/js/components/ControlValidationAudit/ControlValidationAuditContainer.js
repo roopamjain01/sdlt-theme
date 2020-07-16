@@ -36,6 +36,7 @@ import type {SiteConfig} from "../../types/SiteConfig";
 import {SubmissionExpired} from "../Common/SubmissionExpired";
 import {SubmissionNotCompleted} from "../Common/SubmissionNotCompleted";
 import ControlInfo from "../ComponentSelection/ControlInfo";
+import CSRFTokenService from "../../services/CSRFTokenService";
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -80,10 +81,31 @@ type Props = {
   siteConfig?: SiteConfig | null,
 };
 
+let keepSessionActive;
+
 class ControlValidationAuditContainer extends Component<Props, State> {
+
   async componentDidMount() {
     const {uuid, dispatchLoadDataAction, secureToken} = {...this.props};
     await dispatchLoadDataAction(uuid, secureToken);
+
+    /**
+     * Refresh CSRFToken every 10 mins to keep the session activate when the user
+     * is staying on the CVA task page so userInput will not get lost
+     */
+    this.keepSessionActive = setInterval(
+      async function refreshToken() {
+        const csrfToken = await CSRFTokenService.getCSRFToken();
+      },
+      600000
+    );
+  }
+
+  /**
+   * Clear Interval function when the user is leaving CVA task page
+   */
+  componentWillUnmount() {
+    clearInterval(this.keepSessionActive);
   }
 
   /**
