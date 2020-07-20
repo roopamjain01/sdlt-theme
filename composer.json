@@ -1,0 +1,15 @@
+{
+    "name": "nzta/sdlt-theme",
+    "description": "NZTA SDLT Theme",
+    "type": "silverstripe-theme",
+    "keywords": ["silverstripe", "theme", "sdlt"],
+    "license": "BSD-3-Clause",
+    "extra": {
+      "installer-name": "sdlt",
+      "expose": [
+        "dist"
+      ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+  }
