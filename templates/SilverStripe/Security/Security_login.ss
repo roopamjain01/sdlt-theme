@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>$Title :: $SiteConfig.Title</title>
+  <% require themedCSS('dist/css/main') %>
   <style type="text/css">
     .hero-image {
       background-image: url($SiteConfig.LoginHeroImage.ScaleWidth(1920).getURL);
