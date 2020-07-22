@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<% require themedCSS('dist/css/main') %>
+
 <head>
   <% base_tag %>
   <title><% if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %> &raquo; $SiteConfig.Title</title>
@@ -16,4 +18,7 @@
   <% include NoScriptAlert %>
   $Layout
 </body>
+<% require themedJavascript('dist/js/vendors.bundle') %>
+<% require themedJavascript('dist/js/common.bundle') %>
+
 </html>
