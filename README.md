@@ -1,13 +1,9 @@
-# Common Tasks
+# NZTA Security Development Lifecycle Tool :: Theme
 
-## Build SCSS and JavaScript for production
+The SDLT is Web Application that supports, and expedites I.T. security professionals as part of the change approval process within their organisation.
 
-`yarn run build`
+## Requirements
 
-## Build SCSS for development and watch
+The SDLT is written in ReactJS and PHP and built on the [SilverStripe](https://silverstripe.org) framework. 
 
-`yarn run gulp`
-
-## Build JavaScript for development and watch
-
-`yarn run webpack`
+This repository is the Javascript component of [NZTA's SDLT project](https://github.com/nzta/sdlt) and intended to be checked out as a dependency. View that project for setup instructions.
