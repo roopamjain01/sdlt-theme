@@ -70,7 +70,15 @@ query {
     csrfToken: string
   }): Promise<void> {
     const {uuid, controlData, csrfToken} = {...argument};
-    const controlDataStr = window.btoa(JSON.stringify(controlData));
+    const controlDataStr = window.btoa(
+      unescape(
+        encodeURIComponent(
+          JSON.stringify(
+            controlData
+          )
+        )
+      )
+    );
 
     const query = `
 mutation {
