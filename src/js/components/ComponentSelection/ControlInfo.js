@@ -119,13 +119,13 @@ export default class ControlInfo extends React.Component<Props> {
                     initialValue={implementationEvidenceUserInput}
                     disabled={!isCVATaskEditable}
                     init={{
-                       selector: 'textarea',
-                       height: 250,
-                       menubar: false,
-                       toolbar: false,
-                       statusbar: false,
-                       skin_url: 'resources/vendor/silverstripe/admin/thirdparty/tinymce/skins/silverstripe'
-                     }}
+                      selector: 'textarea',
+                      height: 250,
+                      menubar: false,
+                      toolbar: false,
+                      statusbar: false,
+                      skin_url: 'resources/vendor/silverstripe/admin/thirdparty/tinymce/skins/silverstripe'
+                    }}
                     onBlur={(event) => this.handleOnBlurForImplementationEvidence(event)}
                   />
                 </div>
